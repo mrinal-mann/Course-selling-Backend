@@ -2,7 +2,7 @@
 const { Admin } = require("../db");
 // Import the Admin model
 const jwt = require("jsonwebtoken");
-const { JWT_SECRET } = "../config";
+const { JWT_SECRET } = require("../config")
 function adminMiddleware(req, res, next) {
   const token = req.headers.authorization;
   const words = token.split(" ");

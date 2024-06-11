@@ -2,7 +2,8 @@ const { Router } = require("express");
 const router = Router();
 const userMiddleware = require("../middleware/user");
 const { User, Course } = require("../db");
-
+const jwt = require("jsonwebtoken");
+const { JWT_SECRET } = require("../config")
 // User Routes
 router.post("/signup", async (req, res) => {
   const username = req.headers.username;
